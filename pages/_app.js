@@ -1,5 +1,5 @@
-import '@/styles/globals.css'
+import '../config/firebase';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
