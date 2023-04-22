@@ -1,23 +1,36 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { authActions } from '@/redux/slices/auth';
+
+const isExist = (obj) => {
+  return Object.keys(obj).length > 0;
+};
 
 const LoginContainer = () => {
-  const [user, loading, error] = useAuthState(auth);
   const router = useRouter();
+  const { user, isLogin, isLoading, error } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
+  const handleLogin = ({ email, password }) => {
+    dispatch(authActions.postSignIn({ email, password }));
+  };
+
+  const handleLoginWithGoogle = () => {
+    dispatch(authActions.postGoogleSignIn());
+  }
+
   useEffect(() => {
-    if (user) {
+    if (isExist(user) && isLogin) {
       router.push('/');
     }
-  }, [user, router]);
+  }, [user, isLogin]);
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error.error_message}</p>}
       {!user && <button onClick={loginWithGoogle}>Login with Google</button>}
       {user && <button onClick={logout}>Logout</button>}
     </div>

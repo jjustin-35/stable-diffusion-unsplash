@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/apis/*": ["apis/*"],
+      "@/helpers/*": ["helpers/*"],
+      "@/config/*": ["config/*"],
+      "@/constants/*": ["constants/*"],
+      "@/components/*": ["components/*"],
+      "@/containers/*": ["containers/*"],
+      "@/actions/*": ["redux/actions/*"],
+      "@/reducers/*": ["redux/reducers/*"],
+      "@/sagas/*": ["redux/sagas/*"],
+      "@/pages/*": ["pages/*"]
     }
   }
 }

@@ -1,0 +1,5 @@
+import auth from './auth';
+
+export default function* rootSaga() {
+  yield all([...auth]);
+}
