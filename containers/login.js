@@ -13,13 +13,15 @@ const LoginContainer = () => {
   const { user, isLogin, isLoading, error } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const handleLogin = ({ email, password }) => {
-    dispatch(authActions.postSignIn({ email, password }));
+  const handleLogin = ({ loginType, email, password }) => {
+    if (loginType === 'local') {
+      dispatch(authActions.postSignIn({ email, password }));
+    } else if (loginType === 'google') {
+      dispatch(authActions.postGoogleSignIn());
+    } else if (loginType === 'facebook') {
+      dispatch(authActions.postFacebookSignIn());
+    }
   };
-
-  const handleLoginWithGoogle = () => {
-    dispatch(authActions.postGoogleSignIn());
-  }
 
   useEffect(() => {
     if (isExist(user) && isLogin) {

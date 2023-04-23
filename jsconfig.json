@@ -8,6 +8,7 @@
       "@/constants/*": ["constants/*"],
       "@/components/*": ["components/*"],
       "@/containers/*": ["containers/*"],
+      "@/redux/*": ["redux/*"],
       "@/actions/*": ["redux/actions/*"],
       "@/reducers/*": ["redux/reducers/*"],
       "@/sagas/*": ["redux/sagas/*"],

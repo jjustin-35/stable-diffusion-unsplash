@@ -25,6 +25,7 @@ function* signIn(action) {
   try {
     const userCredential = yield call(signInWithEmailAndPassword, auth, email, password);
     const user = userCredential.user;
+    
     yield put(authActions.postSignInSucc({ userData: user }));
     yield put(
       toastActions.showToast({

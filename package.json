@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "cookies-next": "^2.1.1",
     "eslint-config-next": "13.3.0",
     "firebase": "^9.20.0",
     "next": "13.3.0",

@@ -30,8 +30,8 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
 
-    postGoogleSignIn: (_, action) => {},
-    postFacebookSignIn: (_, action) => {},
+    postGoogleSignIn: () => {},
+    postFacebookSignIn: () => {},
 
     getUserDataSucc: (state, action) => {
       state.user = action.payload.userData;
