@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/apis/*": ["apis/*"],
       "@/helpers/*": ["helpers/*"],
       "@/config/*": ["config/*"],
       "@/constants/*": ["constants/*"],
